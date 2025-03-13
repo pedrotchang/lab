@@ -1,0 +1,19 @@
+#!/bin/bash
+# Script to update CV file in blog directory
+
+# Source file (your up-to-date CV)
+SOURCE="/home/pedro/Repos/github.com/pedrotchang/maincv/rendercv_output/Pedro_Tae_Young_Chang_CV.pdf"
+
+# Destination file (the one that needs to be replaced)
+DEST="/home/pedro/Repos/github.com/pedrotchang/blog/static/pedro_tae_young_chang_cv.pdf"
+
+# Check if source file exists
+if [ ! -f "$SOURCE" ]; then
+  echo "Error: Source file does not exist: $SOURCE"
+  exit 1
+fi
+
+# Copy the file (use cp instead of mv to preserve the original)
+cp -f "$SOURCE" "$DEST"
+
+echo "CV updated successfully!"
