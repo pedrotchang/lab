@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+greet() {
+    # name=$1 # global variable
+    local name=$1 
+    echo "hello $name (from func)"
+}
+
+for name in "$@"; do
+    greet "$name"
+done
+
+# var=$(greet pedro) # this calls greet, and gives it an argument called pedro
+# echo "var is $var" # this echos the variable set to var
+
+greet pedro
+
+if [ $? -eq 0 ]; then
+    echo "Success"
+else
+    echo "Failure"
+fi

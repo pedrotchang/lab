@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+
+# if [[ -n $thing ]]; then
+#     for thing in "$@"; do
+# 	echo "thing is $thing"
+#     done
+# else
+#     read -p "Enter things you want: " thing
+# fi
+#
+# echo "thing is $thing"
+
+
+
+if [[ -n $1 ]]; then
+    for thing in "$@"; do
+	echo "thing is $thing"
+    done
+else
+    read -p "Enter things you want: " thing
+fi
+
+echo "thing is $thing"
